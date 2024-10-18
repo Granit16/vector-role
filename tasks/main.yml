@@ -10,10 +10,10 @@
       - vector-0.41.1-1.x86_64.rpm
 - name: Config vector
   become: true
-    ansible.builtin.template:
-      src: "vector.yml"
-      dest: "/etc/vector/vector.yml"
-      mode: "0755"
-      owner: "{{ ansible_user_id }}"
-      group: "{{ ansible_user_gid }}"
-   notify: Restart vector service
+  ansible.builtin.template:
+    src: "vector.yml"
+    dest: "/etc/vector/vector.yml"
+    mode: "0755"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+  notify: Restart vector service
